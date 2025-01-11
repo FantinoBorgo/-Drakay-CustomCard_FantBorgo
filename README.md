@@ -3,7 +3,7 @@ Un Repositorio para cartas Custom del Emulador de carta Yu-Gi-Oh Project Ignis.
 
 descarga este archivo:
 
-[Uploading configs.json…]()
+[configs.json](https://github.com/user-attachments/files/18387439/configs.json)
 
 ## Método de Implementación del repositorio
 
