@@ -35,9 +35,10 @@ function s.initial_effect(c)
 	c:RegisterEffect(e3)
 end
 s.listed_series={0x7d2,0x7d3}
+-- 0x7d2 -> Ancestral Máquina, 0x7d3 -> Ancestral Espíritu
 	--	*Efecto 2°
 function s.aclimit(e,re,tp)
-	return not re:GetHandler():IsSetCard(0x7d2) or re:GetHandler():IsSetCard(0x7d3) 
+	return not (re:GetHandler():IsSetCard(0x7d2) or re:GetHandler():IsSetCard(0x7d3))
 end
     --  *EFECTO 3°
 function s.thcon(e,tp,eg,ep,ev,re,r,rp)
@@ -45,7 +46,7 @@ function s.thcon(e,tp,eg,ep,ev,re,r,rp)
 		and Duel.GetDrawCount(tp)>0 and (Duel.GetTurnCount()>1 or Duel.IsDuelType(DUEL_1ST_TURN_DRAW))
 end
 function s.thfilter(c)
-	return c:IsSetCard(0x7d2) and c:IsAbleToHand()
+	return c:IsSetCard(0x7d3) and c:IsAbleToHand()
 end
 function s.thtg(e,tp,eg,ep,ev,re,r,rp,chk)
 	if chk==0 then return Duel.IsExistingMatchingCard(s.thfilter,tp,LOCATION_DECK,0,1,nil) end
